@@ -17,6 +17,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang='pt-br'
+			suppressHydrationWarning
 			className='scrollbar-thin scrollbar-track-zinc-100 scrollbar-thumb-scHover scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-corner-rounded-full'>
 			<body className={font.className}>
 				{children}

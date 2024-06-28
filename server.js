@@ -27,7 +27,6 @@ app.prepare().then(() => {
                 await app.render(req, res, '/b', query)
             } else {
                 await handle(req, res, parsedUrl)
-                I
             }
         } catch (err) {
             console.error('Error occurred handling', req.url, err);
