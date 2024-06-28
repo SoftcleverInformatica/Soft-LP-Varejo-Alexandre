@@ -1,14 +1,19 @@
 import ButtonExpert from "@/src/components/button_expert";
 import {
-  Calculator,
+  ArrowsLeftRight,
+  Barcode,
+  CardsThree,
   CashRegister,
   ChartBar,
-  Check,
-  File,
+  CirclesThreePlus,
+  FileArrowUp,
   HandArrowDown,
   HandArrowUp,
   HandCoins,
+  HandDeposit,
+  Invoice,
   Package,
+  Scales,
   Sparkle,
 } from "@phosphor-icons/react";
 import { ReactNode } from "react";
@@ -30,22 +35,31 @@ export default function Price() {
       },
       recommended: false,
       fatures: [
-        { item: "Cadastros", icon: <File weight="light" size={20} /> },
-        { item: "Pedido de Venda", icon: <File weight="light" size={20} /> },
-        { item: "Comanda e Delivery", icon: <File weight="light" size={20} /> },
+        {
+          item: "Cadastros",
+          icon: <CirclesThreePlus weight="light" size={20} />,
+        },
+        { item: "Pedido de Venda", icon: <Invoice weight="light" size={20} /> },
+        {
+          item: "Comanda e Delivery",
+          icon: <CardsThree weight="light" size={20} />,
+        },
         {
           item: "Emissão de Pedido de Venda",
-          icon: <File weight="light" size={20} />,
+          icon: <HandDeposit weight="light" size={20} />,
         },
         {
           item: "Emissão de Cupom Fiscal NFC-e",
-          icon: <File weight="light" size={20} />,
+          icon: <FileArrowUp weight="light" size={20} />,
         },
         {
           item: "Controle de Estoque",
-          icon: <File weight="light" size={20} />,
+          icon: <Package weight="light" size={20} />,
         },
-        { item: "Controle de Caixa", icon: <File weight="light" size={20} /> },
+        {
+          item: "Controle de Caixa",
+          icon: <CashRegister weight="light" size={20} />,
+        },
       ],
       price: 79.9,
     },
@@ -55,36 +69,54 @@ export default function Price() {
       description: { label: "" },
       description2: { label: "01 Licença para computador por" },
       fatures: [
-        { item: "Cadastros", icon: <File weight="light" size={20} /> },
-        { item: "Pedido de Venda", icon: <File weight="light" size={20} /> },
-        { item: "Comanda e Delivery", icon: <File weight="light" size={20} /> },
+        {
+          item: "Cadastros",
+          icon: <CirclesThreePlus weight="light" size={20} />,
+        },
+        { item: "Pedido de Venda", icon: <Invoice weight="light" size={20} /> },
+        {
+          item: "Comanda e Delivery",
+          icon: <CardsThree weight="light" size={20} />,
+        },
         {
           item: "Emissão de Pedido de Venda",
-          icon: <File weight="light" size={20} />,
+          icon: <HandDeposit weight="light" size={20} />,
         },
         {
           item: "Controle de Estoque",
-          icon: <File weight="light" size={20} />,
+          icon: <Package weight="light" size={20} />,
         },
-        { item: "Controle de Caixa", icon: <File weight="light" size={20} /> },
-        { item: "Financeiro a Pagar", icon: <File weight="light" size={20} /> },
+        {
+          item: "Controle de Caixa",
+          icon: <CashRegister weight="light" size={20} />,
+        },
+        {
+          item: "Financeiro a Pagar",
+          icon: <HandArrowUp weight="light" size={20} />,
+        },
         {
           item: "Financeiro a Receber",
-          icon: <File weight="light" size={20} />,
+          icon: <HandArrowDown weight="light" size={20} />,
         },
-        { item: "Pedido de Compra", icon: <File weight="light" size={20} /> },
+        {
+          item: "Pedido de Compra",
+          icon: <HandCoins weight="light" size={20} />,
+        },
         {
           item: "Integração com Balança",
-          icon: <File weight="light" size={20} />,
+          icon: <Scales weight="light" size={20} />,
         },
         {
           item: "Etiqueta de Código de Barras",
-          icon: <File weight="light" size={20} />,
+          icon: <Barcode weight="light" size={20} />,
         },
-        { item: "Troca e Devolução", icon: <File weight="light" size={20} /> },
+        {
+          item: "Troca e Devolução",
+          icon: <ArrowsLeftRight weight="light" size={20} />,
+        },
         {
           item: "Relatórios Gerenciais",
-          icon: <File weight="light" size={20} />,
+          icon: <ChartBar weight="light" size={20} />,
         },
       ],
       price: 99.9,
@@ -93,20 +125,26 @@ export default function Price() {
       plan: "Sírius SAT Prata - Cupom Fiscal",
       recommended: false,
       fatures: [
-        { item: "Cadastros", icon: <File weight="light" size={20} /> },
-        { item: "Pedido de Venda", icon: <File weight="light" size={20} /> },
+        {
+          item: "Cadastros",
+          icon: <CirclesThreePlus weight="light" size={20} />,
+        },
+        { item: "Pedido de Venda", icon: <Invoice weight="light" size={20} /> },
         {
           item: "Emissão de Cupom Fiscal SAT ou NFC-e",
-          icon: <File weight="light" size={20} />,
+          icon: <FileArrowUp weight="light" size={20} />,
         },
         {
           item: "Controle de Estoque",
-          icon: <File weight="light" size={20} />,
+          icon: <Package weight="light" size={20} />,
         },
-        { item: "Controle de Caixa", icon: <File weight="light" size={20} /> },
+        {
+          item: "Controle de Caixa",
+          icon: <CashRegister weight="light" size={20} />,
+        },
         {
           item: "Relatórios Gerenciais",
-          icon: <File weight="light" size={20} />,
+          icon: <ChartBar weight="light" size={20} />,
         },
       ],
       price: 109.9,
@@ -165,7 +203,7 @@ export default function Price() {
                         key={i}
                         className="text-[#003658]/90 text-xs leading-5 flex items-center gap-2"
                       >
-													{<Check size={10} />}
+                        {_.icon}
                         <span>{_.item}</span>
                       </li>
                     );
