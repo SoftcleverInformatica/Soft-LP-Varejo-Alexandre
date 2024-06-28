@@ -24,7 +24,7 @@ export default function ButtonExpert({ className, animation, color = 'white', la
 			target='_blank'>
 			<span
 				className={`
-					text-sm  
+					text-xs md:text-sm  
 					${color == 'white' && 'font-semibold'} 
 					${color == 'white' ? 'text-sc' : 'text-white'}
 				`}>

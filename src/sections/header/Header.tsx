@@ -70,6 +70,7 @@ export default function Header() {
 
       <div
         className='col-span-10  col-start-2 row-start-12
+            md:row-start-9
             lg:col-span-4 lg:col-start-3 lg:row-start-12'>
         <ButtonExpert
           color={'orange'}

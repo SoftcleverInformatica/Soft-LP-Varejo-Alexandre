@@ -1,13 +1,14 @@
 "use client"
-import Header from "../sections/header/Header";
 import AboutUs from "../sections/about-us/AboutUs";
 import Client from "../sections/client/Client";
-import Products from "../sections/product/Products";
-import Segments from "../sections/segments/Segments";
 import Differential from "../sections/differential/Diferential";
 import Feedback from "../sections/feedback/Feedback";
-import Questions from "../sections/questions/Questions";
 import Footer from "../sections/footer/Footer";
+import Header from "../sections/header/Header";
+import Price from "../sections/price/Price";
+import Products from "../sections/product/Products";
+import Questions from "../sections/questions/Questions";
+import Segments from "../sections/segments/Segments";
 import Video from "../sections/video/Video";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Video/>
       <Products/>
       <Differential/>
+      <Price />
       <Segments/>
       <Feedback/>
       <Questions/>
