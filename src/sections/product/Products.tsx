@@ -44,9 +44,9 @@ export default function Products() {
     },
     {
       image: NotaFiscalServicos,
-      label: "Nota Fiscal de Serviços",
+      label: "Sírius Nota Fiscal de Serviço",
       description:
-        "Nota Fiscal de Serviços Eletrônica (NFS-e), com envio rápido e em lote para o sistema da prefeitura. Gerada a partir do pedido de venda e integrada com o financeiro.",
+        "Nota Fiscal de Serviço Eletrônica (NFS-e), com envio rápido e em lote para o sistema da prefeitura. Gerada a partir do pedido de venda e integrada com o financeiro.",
     },
     {
       image: Delivery,
@@ -125,7 +125,7 @@ export default function Products() {
     <section className="w-full flex flex-col justify-center items-center overflow-y-hidden py-5  ">
       <div className="flex flex-col gap-10 md:max-w-2xl lg:max-w-5xl xl:max-w-7xl items-center w-full">
         <h2 className="p-5 font-extrabold text-sc2 text-2xl text-center ">
-          Conheça as soluções da Sirius Varejo!
+          Conheça as soluções da Soft Clever para o seu comércio varejista!
         </h2>
 
         <div className=" flex flex-col md:flex-row items-center gap-5 p-5 bg-sc h-full md:h-20 rounded-lg opacity-90">

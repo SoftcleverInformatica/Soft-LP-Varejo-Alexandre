@@ -69,17 +69,17 @@ export default function Price() {
       description: { label: "" },
       description2: { label: "01 Licença para computador por" },
       fatures: [
-        {
-          item: "Cadastros",
-          icon: <CirclesThreePlus weight="light" size={20} />,
-        },
+        // {
+        //   item: "Cadastros",
+        //   icon: <CirclesThreePlus weight="light" size={20} />,
+        // },
         { item: "Pedido de Venda", icon: <Invoice weight="light" size={20} /> },
         {
           item: "Comanda e Delivery",
           icon: <CardsThree weight="light" size={20} />,
         },
         {
-          item: "Emissão de Pedido de Venda",
+          item: "Emissão de Cupom Não Fiscal",
           icon: <HandDeposit weight="light" size={20} />,
         },
         {
@@ -91,25 +91,25 @@ export default function Price() {
           icon: <CashRegister weight="light" size={20} />,
         },
         {
-          item: "Financeiro a Pagar",
+          item: "Financeiro a Pagar e a Receber",
           icon: <HandArrowUp weight="light" size={20} />,
         },
-        {
-          item: "Financeiro a Receber",
-          icon: <HandArrowDown weight="light" size={20} />,
-        },
+        // {
+        //   item: "Financeiro a Receber",
+        //   icon: <HandArrowDown weight="light" size={20} />,
+        // },
         {
           item: "Pedido de Compra",
           icon: <HandCoins weight="light" size={20} />,
         },
         {
-          item: "Integração com Balança",
+          item: "Balança e Código de Barras",
           icon: <Scales weight="light" size={20} />,
         },
-        {
-          item: "Etiqueta de Código de Barras",
-          icon: <Barcode weight="light" size={20} />,
-        },
+        // {
+        //   item: "Etiqueta de Código de Barras",
+        //   icon: <Barcode weight="light" size={20} />,
+        // },
         {
           item: "Troca e Devolução",
           icon: <ArrowsLeftRight weight="light" size={20} />,
@@ -175,7 +175,7 @@ export default function Price() {
   return (
     <section className="flex flex-col items-center gap-5 px-[1.9rem] py-[1.9rem] lg:px-[2.5rem]  lg:gap-10 ">
       <h2 className="text-sc font-extrabold text-2xl">
-        Escolha um plano que melhor se encaixa para você
+        Escolha o plano ideal para o seu negócio
       </h2>
       <div className="flex flex-col gap-1 justify-center md:grid md:grid-rows-2 md:grid-cols-2 xl:flex xl:flex-row ">
         {planos.map((_, i) => {

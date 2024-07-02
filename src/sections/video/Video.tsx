@@ -31,14 +31,14 @@ export default function Video() {
   return (
     <section className='flex flex-col gap-10 bg-sc text-white px-10 py-14 items-center w-full'>
       <div className='flex flex-col items-center gap-12 lg:max-w-2xl xl:max-w-4xl w-full '>
-        <h2 className="text-3xl font-bold" >Assista a apresentação do Sirius S@T </h2>
 
         <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} w-full h-full justify-between gap-10`}>
-          <iframe className="max-w-full rounded-lg w-[30rem] h-[16.2rem]" src="https://www.youtube.com/embed/cyZewkBguQ8?si=Glgqb5asSfIl7vRz" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-
+        <iframe className="max-w-full rounded-lg w-[30rem] h-[16.2rem]" src="https://www.youtube.com/embed/Mg1crfLqPf0?si=YFuwYFQFy3oxeqTs&amp;controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           <div className={`w-[60%] ${isMobile && 'w-full gap-5'} flex flex-col justify-between items-start`}>
-            <h2 className="text-xl font-semibold">Conheça o Sírius SAT:</h2>
-            <p className="text-lg">Gerencie seu comércio, realize vendas de forma simples e rápida, e ainda atenda totalmente a legislação do estado de São Paulo.</p>
+            <h2 className="text-2xl font-semibold">Conheça o Sírius S@T - Pré Venda</h2>
+            <p className="text-lg text-justify">
+            Versão instalada no seu computador. Gestão total do seu comércio de forma simples e rápida para emissão de cupom fiscal e cupom não fiscal.
+            </p>
             <ButtonExpert
               color={'orange'}
               label='Converse agora com um especialista'
@@ -49,8 +49,8 @@ export default function Video() {
           <iframe className="max-w-full rounded-lg w-[30rem] h-[16.2rem]" src="https://www.youtube.com/embed/tRzIs4gqI98?si=lSJmn-jWQbdRGi9x" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
           <div className={`w-[60%] ${isMobile && 'w-full gap-5'} flex flex-col justify-between items-start`}>
-            <h2 className="text-xl font-semibold">Conheça o Sírius PDV Web:</h2>
-            <p className="text-lg">Realize vendas de forma simples e rápida, e também gerencie seu comércio.</p>
+            <h2 className="text-2xl font-semibold">Conheça o Sírius PDV Web</h2>
+            <p className="text-lg text-justify">Versão online (internet) que pode ser utilizada no PC e no Celular. Pacote de entrada com os recursos essenciais para a gestão do seu negócio com emissão de cupom fiscal e cupom não fiscal.</p>
             <ButtonExpert
               color={'orange'}
               label='Converse agora com um especialista'

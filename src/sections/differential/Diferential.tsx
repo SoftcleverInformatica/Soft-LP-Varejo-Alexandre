@@ -46,7 +46,7 @@ export default function Differential() {
         <div className="flex items-center gap-10 ">
           <div className="flex flex-col gap-14 ">
             <h1 className="text-justify text-sc  text-lg font-semibold lg:text-left lg:text-3xl">
-              Porque a Sirius Shop é a escolha certa para o seu negócio
+              Porque a Soft Clever é a escolha certa para o seu negócio
             </h1>
 
             <ul
@@ -56,15 +56,16 @@ export default function Differential() {
               <li className="flex flex-row gap-4 items-center h-[2rem]">
                 <Image sizes="" alt="Tick" src={Tick} />
                 <span>
-                  O <strong className="text-[#CC4125]">ÚNICO</strong> sistema{" "}
+                  Somos a <strong className="text-[#CC4125]">ÚNICA</strong> empresa{" "}
                   <strong className="text-[#CC4125]">SEM CONTRATO</strong> de
                   fidelidade
                 </span>
               </li>
+
               <li className="flex flex-row gap-4 items-center h-[2rem]">
                 <Image sizes="" alt="Tick" src={Tick} />
                 <span>
-                  A <strong className="text-[#CC4125]">ÚNICA EMPRESA</strong>{" "}
+                  Somos a <strong className="text-[#CC4125]">ÚNICA EMPRESA</strong>{" "}
                   que oferece um atendimento{" "}
                   <strong className="text-[#CC4125]">
                     humanizado e personalizado
@@ -72,31 +73,33 @@ export default function Differential() {
                   , sem qualquer tipo de robô.
                 </span>
               </li>
+
               <li className="flex flex-row gap-4 items-center h-[2rem]">
                 <Image sizes="" alt="Tick" src={Tick} />
                 <span>
-                  O sistema{" "}
+                  Temos o sistema{" "}
                   <strong className="text-[#CC4125]">MAIS SIMPLES</strong> e{" "}
                   <strong className="text-[#CC4125]">ÁGIL</strong> para ser
                   usado.
                 </span>
               </li>
+
               <li className="flex flex-row gap-4 items-center h-[2rem]">
                 <Image sizes="" alt="Tick" src={Tick} />
-                <span>Pacotes para todos os tipos e tamanhos de empresa</span>
+                <span>Nossos pacotes são para todos os tipos e tamanhos de empresa.</span>
               </li>
+
               <li className="flex flex-row gap-4 items-center h-[2rem]">
                 <Image sizes="" alt="Tick" src={Tick} />
                 <span>
-                  Mais de 12.000 usuários atendidos em milhares de projetos
-                  implantados.
+                Já atendemos mais de 12.000 usuários em milhares de{!isMobile && (<br/>)} projetos implantados.
                 </span>
               </li>
+
               <li className="flex flex-row gap-4 items-center h-[2rem]">
                 <Image sizes="" alt="Tick" src={Tick} />
                 <span>
-                  A empresa mais tradicional do mercado, com mais de 30 anos de
-                  experiência
+                  Somos a empresa mais tradicional do mercado, com mais {!isMobile && (<br/>)} de 30 anos de experiência.
                 </span>
               </li>
             </ul>

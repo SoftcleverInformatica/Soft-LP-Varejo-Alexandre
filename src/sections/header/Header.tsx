@@ -38,17 +38,19 @@ export default function Header() {
 
     <header
       style={bg}
-      className={`bg-cover  grid relative overflow-x-hidden grid-cols-12 grid-rows-12 gap-3 md:h-[50rem] min-h-[27rem] xl:h-[42rem]  lg:min-h-[40rem] lg:max-h[42rem] bg-no-repeat bg-right-top pb-4 lg:bg-cover`}>
+      className={`bg-cover  grid relative overflow-x-hidden grid-cols-12 grid-rows-12 gap-3 md:h-[50rem] min-h-[27rem] xl:h-[42rem]  lg:min-h-[40rem] lg:max-h[42rem] bg-no-repeat bg-right-top pb-4 lg:bg-cover lg:pb-10`}>
       <div
         className='
         col-span-full pl-10 min-w-[20rem] row-span-1 
             md:row-span-2 md:absolute md:left-[5%]
             lg:pl-0 lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-2 flex lg:items-center pt-2'>
-        <Image
-          className='w-[60%] md:max-h-[4rem] lg:max-h-[3.5rem] lg:w-[100%] lg:ml-[6.5rem]'
-          alt='logo Softclever'
-          src={isMobile ? LogoBranco : LogoAzul}
-        />
+        <a className='flex w-full' href="https://softclever.com.br/" target='_blank'>
+          <Image
+            className='w-[60%] md:max-h-[4rem] lg:max-h-[3.5rem] lg:w-[100%] lg:ml-[6.5rem]'
+            alt='logo Softclever'
+            src={isMobile ? LogoBranco : LogoAzul}
+          />
+        </a>
       </div>
 
       <div
