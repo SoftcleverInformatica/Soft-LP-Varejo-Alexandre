@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
-
 import { ArrowsLeftRight, Barcode, CardsThree, CashRegister, ChartBar, CirclesThreePlus, FileArrowUp, HandArrowDown, HandArrowUp, HandCoins, HandDeposit, Invoice, Package, Scales, Sparkle } from '@phosphor-icons/react';
-
 import ButtonExpert from '@/components/button_expert';
 
 export default function Price() {
@@ -153,22 +151,22 @@ export default function Price() {
 
 	return (
 		<section className='flex flex-col items-center gap-5 px-[1.9rem] py-[1.9rem] lg:px-[2.5rem]  lg:gap-10 '>
-			<h2 className='text-sc font-extrabold text-2xl'>Escolha o plano ideal para o seu negócio</h2>
+			<h2 className='text-primary font-extrabold text-2xl'>Escolha o plano ideal para o seu negócio</h2>
 			<div className='flex flex-col gap-1 justify-center md:grid md:grid-rows-2 md:grid-cols-2 xl:flex xl:flex-row '>
 				{planos.map((_, i) => {
 					return (
-						<div key={i} className={`flex flex-col gap-1 p-2 pt-2 rounded-md  ${_.recommended ? 'bg-sc' : ''} `}>
+						<div key={i} className={`flex flex-col gap-1 p-2 pt-2 rounded-md  ${_.recommended ? 'bg-primary' : ''} `}>
 							<span className='text-white font-bold h-6 pl-3'>{_.recommended ? 'Recomendado' : ''}</span>
 							<div
-								className={`flex flex-col flex-1 gap-4 justify-between px-4 py-8 bg-white rounded-md border transition ease-in-out delay-150 hover:drop-shadow-[0px_0px_10px_rgba(36,173,181,.75)] border-[#003658]/50 ${_.recommended ? 'drop-shadow-[0px_0px_6px_rgba(36,173,181,1)]' : ''}  lg:px-8 lg:py-12 lg:gap-5 max-w-[18rem]`}>
+								className={`flex flex-col flex-1 gap-4 justify-between px-4 py-8 bg-white rounded-md border transition ease-in-out delay-150 hover:drop-shadow-[0px_0px_10px_rgba(36,173,181,.75)] border-primary /50 ${_.recommended ? 'drop-shadow-[0px_0px_6px_rgba(36,173,181,1)]' : ''}  lg:px-8 lg:py-12 lg:gap-5 max-w-[18rem]`}>
 								<div>
-									<h4 className='text-sc font-semibold text-2xl'>{_.plan}</h4>
-									<p className='text-[#003658]/70 text-xs '>{_.description.label}</p>
+									<h4 className='text-primary font-semibold text-2xl'>{_.plan}</h4>
+									<p className='text-primary /70 text-xs '>{_.description.label}</p>
 								</div>
 								<ul className='flex flex-col gap-2'>
 									{_.fatures.map((_, i) => {
 										return (
-											<li key={i} className='text-[#003658]/90 text-xs leading-5 flex items-center gap-2'>
+											<li key={i} className='text-primary /90 text-xs leading-5 flex items-center gap-2'>
 												{_.icon}
 												<span>{_.item}</span>
 											</li>
@@ -176,17 +174,17 @@ export default function Price() {
 									})}
 								</ul>
 								<div className='flex flex-col gap-1 lg:gap-4'>
-									<p className='text-[#003658]/70 text-xs '>{_.description2.label}</p>
-									<h3 className={`text-sc font-bold text-3xl ${_.price ? '' : 'hidden'}`}>
+									<p className='text-primary /70 text-xs '>{_.description2.label}</p>
+									<h3 className={`text-primary font-bold text-3xl ${_.price ? '' : 'hidden'}`}>
 										{_.price
 											? new Intl.NumberFormat('pt-BR', {
 													style: 'currency',
 													currency: 'BRL',
 												}).format(_.price)
 											: ''}
-										<span className='text-[#003658]/70 text-sm'> Mensais</span>
+										<span className='text-primary /70 text-sm'> Mensais</span>
 									</h3>
-									<p className='text-[#003658]/70 text-xs '>{_.plan === 'Sírius SAT Prata - Cupom Fiscal' ? '* Pode ser integrado as nossas ferramentas, tais como: Pré Venda, Comanda, Delivery e outras.' : ''}</p>
+									<p className='text-primary /70 text-xs '>{_.plan === 'Sírius SAT Prata - Cupom Fiscal' ? '* Pode ser integrado as nossas ferramentas, tais como: Pré Venda, Comanda, Delivery e outras.' : ''}</p>
 									<ButtonExpert color={`orange`} label='Fale com um especialista' />
 								</div>
 							</div>

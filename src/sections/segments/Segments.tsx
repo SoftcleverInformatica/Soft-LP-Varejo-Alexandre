@@ -1,9 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
 import Imagem5 from 'root/public/assets/Image5.png';
-
 import ButtonExpert from '@/components/button_expert';
 
 export default function Segments() {
@@ -34,7 +32,7 @@ export default function Segments() {
 
 	return (
 		<section
-			className={`w-full bg-sc flex flex-col gap-[1.5rem]  justify-center items-center 
+			className={`w-full bg-primary flex flex-col gap-[1.5rem]  justify-center items-center 
             `}>
 			<div className='flex flex-col gap-[1.5rem] px-[2rem] py-[2.5rem] w-full lg:gap-[2.5rem] lg:max-w-3xl xl:max-w-5xl '>
 				<h1

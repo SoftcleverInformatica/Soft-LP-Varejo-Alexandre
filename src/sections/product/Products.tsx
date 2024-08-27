@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
+import { useState } from 'react';
+import { ArrowRight } from '@phosphor-icons/react';
 import Image from 'next/image';
 import Cardapio from 'root/public/assets/Produtos-SVG/cardapio.svg';
 import Delivery from 'root/public/assets/Produtos-SVG/delivery.svg';
@@ -18,12 +18,10 @@ import PedidoVenda from 'root/public/assets/Produtos-SVG/Ped-Vendas.svg';
 import pet from 'root/public/assets/Produtos-SVG/pet.svg';
 import Producao from 'root/public/assets/Produtos-SVG/Producao.svg';
 import webLojas from 'root/public/assets/Produtos-SVG/web-lojas.svg';
-
-import { Card, CardContent } from '@/components/ui/card';
 import ButtonExpert from '@/components/button_expert';
 
 export default function Products() {
-	const [isMobile, setIsMobile] = useState(true);
+	const [selecionado, setSelecionado] = useState({ item: 0 });
 
 	const cards: { image: any; label: string; description: string }[] = [
 		{
@@ -88,53 +86,41 @@ export default function Products() {
 		},
 	];
 
-	useEffect(() => {
-		if (window.innerWidth >= 320 && window.innerWidth <= 1024) {
-			setIsMobile(true);
-		} else {
-			setIsMobile(false);
-		}
+	const item = (item: number) => {
+		// let exibirDetalhes = cards.filter((item: any) => item.label === modulo);
 
-		function updateText() {
-			if (window.innerWidth >= 320 && window.innerWidth <= 1024) {
-				setIsMobile(true);
-			} else {
-				setIsMobile(false);
-			}
-		}
-
-		// Adiciona um ouvinte de evento de redimensionamento da janela
-		window.addEventListener('resize', updateText);
-
-		// Remove o ouvinte de evento ao desmontar o componente
-		return () => {
-			window.removeEventListener('resize', updateText);
-		};
-	}, []);
+		return (
+			<div key={Math.random()} className=' p-6 opacity-0 animate-fadeIn  flex flex-col gap-10'>
+				<h3>{cards[item].label}</h3>
+				<h6>{cards[item].description}</h6>
+				<Image className='h-24 w-full lg:h-72 lg:w-auto' alt={cards[item].label} src={cards[item].image} width={1000} height={1000} />
+			</div>
+		);
+	};
 
 	return (
 		<section className='flex w-full flex-col items-center justify-center overflow-y-hidden py-5'>
-			<div className='flex w-full flex-col items-center gap-10 md:max-w-2xl lg:max-w-5xl xl:max-w-7xl'>
-				<h2 className='p-5 text-center text-2xl font-extrabold text-sc2'>Conheça as soluções da Soft Clever para o seu comércio varejista!</h2>
+			<div className={`	w-full flex flex-col gap-6 pt-10 px-4 md:px-10 md:pt-20 lg:px-24 lg:pt-28 lg:gap-20 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem]`}>
+				<h2 className='p-5 text-center text-2xl font-extrabold text-primary'>Conheça as soluções da Soft Clever para o seu comércio varejista!</h2>
 
-				<div className='flex h-full flex-col items-center gap-5 rounded-lg bg-sc p-5 opacity-90 md:h-20 md:flex-row'>
+				<div className='flex h-full flex-col items-center gap-5 rounded-lg bg-primary p-5 opacity-90 md:h-20 md:flex-row md:w-[30rem]  '>
 					<p className='text-white'>Integrações com:</p>
 					<Image src={iFood} alt='logo ifood' width={60} />
 					<Image src={Tray} alt='logo Tray' width={60} />
 					<Image src={mercadoLivre} alt='logo Mercado Livre' width={60} />
 				</div>
 
-				<div className='flex w-full flex-wrap justify-center gap-6'>
-					{cards.map((_, index) => (
-						<Card key={index} className='min-h-[30rem] max-w-[17rem] p-4 shadow-2xl'>
-							<CardContent className='flex flex-col items-center gap-6'>
-								<Image className='h-24 w-24 lg:h-32 lg:w-32' alt={_.image} src={_.image} />
-
-								<h2 className='flex w-full flex-row items-center justify-center text-center text-2xl font-bold leading-5 text-sc lg:text-[1.14rem]'>{_.label}</h2>
-								<p className='text-justify text-sc lg:text-sm'>{_.description}</p>
-							</CardContent>
-						</Card>
-					))}
+				<div className='flex flex-col lg:flex-row justify-between gap-10 border-2 rounded-[40px] '>
+					<div className='w-1/2 '>
+						<div className='p-6'>
+							{cards.map((_, i) => (
+								<a key={i} onClick={() => setSelecionado({ item: i })} className={`flex justify-between items-center p-2 text-base font-semibold border-b  ${selecionado.item === i ? 'text-primary' : ''} `}>
+									<span>{_.label}</span> <ArrowRight></ArrowRight>
+								</a>
+							))}
+						</div>
+					</div>
+					<div className='w-1/2 bg-secondary rounded-r-[40px] text-white '>{item(selecionado.item)}</div>
 				</div>
 				<div className='px-6'>
 					<ButtonExpert color={'orange'} label='Quero decolar o meu negócio' animation='animate-pulse' />

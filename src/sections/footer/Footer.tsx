@@ -1,12 +1,11 @@
 import Image from 'next/image';
-
 import fbLogo from '../../../public/assets/facebookLogo.svg';
 import insta from '../../../public/assets/instagramLogo.svg';
 import youtubeLogo from '../../../public/assets/youtubeLogo.svg';
 
 export default function Footer() {
 	return (
-		<div className='flex flex-col gap-10 bg-sc text-white text-xs px-[2.5rem] py-[1.8rem] items-center w-full '>
+		<div className='flex flex-col gap-10 bg-primary text-white text-xs px-[2.5rem] py-[1.8rem] items-center w-full '>
 			<div className='flex flex-col gap-10 sm:px-20 justify-between  sm:flex-row items-center  lg:max-w-2xl xl:max-w-4xl w-full border-b-[1px] border-white py-10 '>
 				<div className='flex flex-col  gap-1'>
 					<h4 className='text-lg font-bold  '>REDE SOCIAIS</h4>

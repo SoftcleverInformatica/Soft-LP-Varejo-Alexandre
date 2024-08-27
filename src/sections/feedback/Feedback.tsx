@@ -1,10 +1,8 @@
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
-
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import ButtonExpert from '@/components/button_expert';
 import { ReadMore } from '@/components/ReadMore';
-
 import feedbackImageBg from '../../../public/assets/feedback.png';
 import star from '../../../public/assets/star.svg';
 import starGray from '../../../public/assets/starGray.svg';
@@ -303,10 +301,10 @@ export default function Feedback() {
 						<CarouselItem key={index} className='pl-2 md:basis-1/3 lg:basis-1/5 '>
 							<div className='flex flex-col justify-between max-w-[80%] md:max-w-60 lg:max-w-60 min-h-80 px-5 py-10 ml-12 bg-white rounded-lg ' key={index}>
 								<div className='flex flex-col '>
-									<span className='text-4xl font-bold text-sc '>&#34;</span>
-									<ReadMore className='text-[0.9rem] leading-6 text-sc text-justify' text={_.message} amountOfWords={16} />
+									<span className='text-4xl font-bold text-primary '>&#34;</span>
+									<ReadMore className='text-[0.9rem] leading-6 text-primary text-justify' text={_.message} amountOfWords={16} />
 									<p className='text-justify'></p>
-									<span className='text-4xl text-right w-full font-bold text-sc '>&#34;</span>
+									<span className='text-4xl text-right w-full font-bold text-primary '>&#34;</span>
 								</div>
 
 								<div className='flex flex-col gap-2'>
@@ -324,9 +322,9 @@ export default function Feedback() {
 										/>
 										{/* info */}
 										<div className='flex flex-col'>
-											<p className='text-[9px] font-semibold text-sc'>{_.name}</p>
+											<p className='text-[9px] font-semibold text-primary'>{_.name}</p>
 											<div className='flex items-center gap-2'>
-												<p className='text-[10px] text-sc'>{_.score}</p>
+												<p className='text-[10px] text-primary'>{_.score}</p>
 												<div style={bgStarGray} className='w-[2.8rem]  h-[0.6rem]'>
 													<div style={{ backgroundImage: `url(${star.src})`, width: `${_.score * 20}%` }} className='h-full '></div>
 												</div>

@@ -1,11 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
 import Image from 'next/image';
-
 import ButtonExpert from '@/components/button_expert';
-
 import SobreNos from '../../../public/assets/about-us.png';
 
 export default function AboutUs() {
@@ -42,14 +39,14 @@ export default function AboutUs() {
         md:grid-rows-7
         lg:grid-rows-5 lg:mt-0'>
 				<h1
-					className='col-span-5 col-start-2  font-bold text-2xl  text-sc row-span-1
+					className='col-span-5 col-start-2  font-bold text-2xl  text-primary row-span-1
                 lg:col-start-3 lg:row-start-1 lg:flex lg:flex-col lg:justify-center
                 '>
 					Sobre nós
 				</h1>
 
 				<div
-					className='col-span-10 row-span-8 col-start-2 row-start-2 text-justify text-sc font-medium text-lg
+					className='col-span-10 row-span-8 col-start-2 row-start-2 text-justify text-primary font-medium text-lg
             md:row-span-3
             lg:col-span-5 lg:col-start-3 lg:row-start-2 lg:text-left lg:text-base'>
 					<p>
@@ -75,7 +72,7 @@ export default function AboutUs() {
 						className=' col-span-4 col-start-8 row-start-1 row-span-8 flex flex-col justify-center items-center mr-4 
                 lg:row-span-5
                 '>
-						<div className=' absolute w-[20%] max-w-[18rem] h-[60%]  max-h-[23.875rem] rounded-xl bg-sc'></div>
+						<div className=' absolute w-[20%] max-w-[18rem] h-[60%]  max-h-[23.875rem] rounded-xl bg-primary'></div>
 						<Image className='relative right-[10%] w-[23rem]' alt='Homem apertando a mão de outro Homem' src={SobreNos}></Image>
 					</div>
 				)}

@@ -1,11 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
 import Image from 'next/image';
 import DiferenciaisImagem from 'root/public/assets/DiferenciaisImage.png';
 import Tick from 'root/public/assets/NossosDiferenciaisTick.svg';
-
 import ButtonExpert from '@/components/button_expert';
 
 export default function Differential() {
@@ -19,6 +17,7 @@ export default function Differential() {
 	];
 
 	const [isMobile, setIsMobile] = useState(true);
+
 	useEffect(() => {
 		if (window.innerWidth >= 320 && window.innerWidth <= 1023) {
 			setIsMobile(true);
@@ -48,29 +47,29 @@ export default function Differential() {
 			<div className=' lg:max-w-3xl xl:max-w-4xl '>
 				<div className='flex items-center gap-10 '>
 					<div className='flex flex-col gap-14 '>
-						<h1 className='text-justify text-sc  text-lg font-semibold lg:text-left lg:text-3xl'>Porque a Soft Clever é a escolha certa para o seu negócio</h1>
+						<h1 className='text-justify text-primary  text-lg font-semibold lg:text-left lg:text-3xl'>Porque a Soft Clever é a escolha certa para o seu negócio</h1>
 
 						<ul
-							className='flex flex-col gap-[6rem] lg:gap-6 row-start-3 text-justify text-sc font-medium text-lg							max-w-[600px]
+							className='flex flex-col gap-[6rem] lg:gap-6 row-start-3 text-justify text-primary font-medium text-lg							max-w-[600px]
             lg:text-left lg:text-lg'>
 							<li className='flex flex-row gap-4 items-center h-[2rem]'>
 								<Image sizes='' alt='Tick' src={Tick} />
 								<span>
-									Somos a <strong className='text-[#CC4125]'>ÚNICA</strong> empresa <strong className='text-[#CC4125]'>SEM CONTRATO</strong> de fidelidade
+									Somos a <strong className='text-orange-700'>ÚNICA</strong> empresa <strong className='text-orange-700'>SEM CONTRATO</strong> de fidelidade
 								</span>
 							</li>
 
 							<li className='flex flex-row gap-4 items-center h-[2rem]'>
 								<Image sizes='' alt='Tick' src={Tick} />
 								<span>
-									Somos a <strong className='text-[#CC4125]'>ÚNICA EMPRESA</strong> que oferece um atendimento <strong className='text-[#CC4125]'>humanizado e personalizado</strong>, sem qualquer tipo de robô.
+									Somos a <strong className='text-orange-700'>ÚNICA EMPRESA</strong> que oferece um atendimento <strong className='text-orange-700'>humanizado e personalizado</strong>, sem qualquer tipo de robô.
 								</span>
 							</li>
 
 							<li className='flex flex-row gap-4 items-center h-[2rem]'>
 								<Image sizes='' alt='Tick' src={Tick} />
 								<span>
-									Temos o sistema <strong className='text-[#CC4125]'>MAIS SIMPLES</strong> e <strong className='text-[#CC4125]'>ÁGIL</strong> para ser usado.
+									Temos o sistema <strong className='text-orange-700'>MAIS SIMPLES</strong> e <strong className='text-orange-700'>ÁGIL</strong> para ser usado.
 								</span>
 							</li>
 
@@ -93,7 +92,7 @@ export default function Differential() {
 					<div>
 						{!isMobile && (
 							<div className=' flex flex-col justify-center items-center  '>
-								<div className=' absolute w-[20%] max-w-[18rem] h-[50%]  max-h-[23.875rem] rounded-lg bg-sc'></div>
+								<div className=' absolute w-[20%] max-w-[18rem] h-[50%]  max-h-[23.875rem] rounded-lg bg-primary'></div>
 								<Image className='relative right-[20%] w-[18rem]' alt='Homem apertando a mão de outro Homem' src={DiferenciaisImagem}></Image>
 							</div>
 						)}

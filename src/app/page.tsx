@@ -14,7 +14,7 @@ import Video from '../sections/video/Video';
 
 export default function Home() {
 	return (
-		<main className='flex flex-col text-muted font-secondary '>
+		<main className=' flex-col flex '>
 			<Header />
 			<Video />
 			<Products />

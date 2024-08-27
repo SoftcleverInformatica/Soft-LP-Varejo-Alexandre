@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import WhatsappIconWhite from '../../public/assets/whatsapp_white.svg';
 import WhatsappIcon from '../../public/assets/whatsapp.svg';
 
@@ -14,9 +13,9 @@ export default function ButtonExpert({ className, animation, color = 'white', la
 		<a
 			className={`
 				flex items-center justify-center gap-2 py-2 px-12 rounded-md  hover:opacity-90
-				${color === 'white' ? 'bg-white  text-sc hover:bg-slate-500 ' : ''}
+				${color === 'white' ? 'bg-white  text-primary hover:bg-slate-500 ' : ''}
 				${color === 'orange' ? 'bg-orange-700 hover:bg-orange-600' : ''}
-				${color === 'blue' ? 'bg-sc' : ''} 
+				${color === 'blue' ? 'bg-primary' : ''} 
 				${animation ? animation : ''} 
 				${className}
 			`}
@@ -26,7 +25,7 @@ export default function ButtonExpert({ className, animation, color = 'white', la
 				className={`
 					text-xs md:text-sm  
 					${color == 'white' && 'font-semibold'} 
-					${color == 'white' ? 'text-sc' : 'text-white'}
+					${color == 'white' ? 'text-primary' : 'text-white'}
 				`}>
 				{label}
 			</span>

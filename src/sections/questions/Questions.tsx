@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ButtonExpert from '@/components/button_expert';
 
@@ -70,7 +69,7 @@ export default function Questions() {
 	];
 	return (
 		<>
-			<section className='grid grid-cols-12 grid-rows-10 lg:grid-rows-3 w-full bg-sc gap-6 lg:py-[3.3rem] md:pb-6 shadow-xl'>
+			<section className='grid grid-cols-12 grid-rows-10 lg:grid-rows-3 w-full bg-primary gap-6 lg:py-[3.3rem] md:pb-6 shadow-xl'>
 				<div
 					className='col-span-10 col-start-2 row-span-1 row-start-2
             lg:col-span-3 lg:col-start-2 lg:row-span-2 lg:row-start-2 
@@ -92,7 +91,7 @@ export default function Questions() {
 					<Accordion className='gap-3 bg-white p-4  rounded-md' type='single' collapsible>
 						{QuestionsResponse.map((item, index) => {
 							return (
-								<AccordionItem className='bg-sc mb-3 rounded-md' value={index.toString()} key={index}>
+								<AccordionItem className='bg-primary mb-3 rounded-md' value={index.toString()} key={index}>
 									<AccordionTrigger className='text-white text-lg font-semibold gap-2 px-3 text-left'>{item.Question}</AccordionTrigger>
 									<AccordionContent className='text-white text-base font-normal px-4 text-justify'>{item.Response}</AccordionContent>
 								</AccordionItem>
