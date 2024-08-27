@@ -1,7 +1,9 @@
 'use client';
-import { AccordionItem, Accordion, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
-import ButtonExpert from '@/src/components/button_expert';
-import { useState, useEffect } from 'react';
+
+import { useEffect, useState } from 'react';
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import ButtonExpert from '@/components/button_expert';
 
 export default function Questions() {
 	const [isMobile, setIsMobile] = useState(true);
@@ -79,12 +81,7 @@ export default function Questions() {
                     lg:text-5xl lg:leading-[3.5rem]'>
 						Perguntas Frequentes
 					</h2>
-					{!isMobile && (
-						<ButtonExpert
-							color={'orange'}
-							label='Fale com um especialista'
-						/>
-					)}
+					{!isMobile && <ButtonExpert color={'orange'} label='Fale com um especialista' />}
 				</div>
 
 				<div
@@ -92,34 +89,22 @@ export default function Questions() {
                 md:mb-[2.5rem]
             lg:col-span-6 lg:col-start-6 lg:row-start-1 lg:row-st
             '>
-					<Accordion
-						className='gap-3 bg-white p-4  rounded-md'
-						type='single'
-						collapsible>
+					<Accordion className='gap-3 bg-white p-4  rounded-md' type='single' collapsible>
 						{QuestionsResponse.map((item, index) => {
 							return (
-								<AccordionItem
-									className='bg-sc mb-3 rounded-md'
-									value={index.toString()}
-									key={index}>
-									<AccordionTrigger className='text-white text-lg font-semibold gap-2 px-3 text-left'>
-										{item.Question}
-									</AccordionTrigger>
-									<AccordionContent className='text-white text-base font-normal px-4 text-justify'>
-										{item.Response}
-									</AccordionContent>
+								<AccordionItem className='bg-sc mb-3 rounded-md' value={index.toString()} key={index}>
+									<AccordionTrigger className='text-white text-lg font-semibold gap-2 px-3 text-left'>{item.Question}</AccordionTrigger>
+									<AccordionContent className='text-white text-base font-normal px-4 text-justify'>{item.Response}</AccordionContent>
 								</AccordionItem>
 							);
 						})}
 					</Accordion>
 				</div>
 				{isMobile && (
-					<div className='col-span-10 col-start-2 row-start-10 mt-6 md:mt-3 lg:mt-0
+					<div
+						className='col-span-10 col-start-2 row-start-10 mt-6 md:mt-3 lg:mt-0
 					lg:col-span-6 lg:col-start-6 lg:row-start-1 lg:row-st'>
-						<ButtonExpert
-							color={'orange'}
-							label='Fale com um especialista'
-						/>
+						<ButtonExpert color={'orange'} label='Fale com um especialista' />
 					</div>
 				)}
 			</section>

@@ -1,8 +1,12 @@
 'use client';
-import Image from 'next/image';
-import SobreNos from '../../../assets/about-us.png';
+
 import { useEffect, useState } from 'react';
-import ButtonExpert from '@/src/components/button_expert';
+
+import Image from 'next/image';
+
+import ButtonExpert from '@/components/button_expert';
+
+import SobreNos from '../../../public/assets/about-us.png';
 
 export default function AboutUs() {
 	const [isMobile, setIsMobile] = useState(true);
@@ -50,21 +54,18 @@ export default function AboutUs() {
             lg:col-span-5 lg:col-start-3 lg:row-start-2 lg:text-left lg:text-base'>
 					<p>
 						{' '}
-						A Soft Clever tem uma trajetória sólida no desenvolvimento de sistemas desde 1994. Com mais de 12.000 usuários
-						atendidos e inúmeras parcerias estabelecidas com escritórios de contabilidade, nossa empresa está empenhada em
-						oferecer um serviço cada vez mais aprimorado. Nosso segredo reside no compromisso com a excelência, priorizando o
-						bem-estar de nossos clientes e buscando sempre orientá-los para as melhores decisões. Isso resulta em confiança e
-						satisfação em cada interação com nossos serviços.
+						A Soft Clever tem uma trajetória sólida no desenvolvimento de sistemas desde 1994. Com mais de 12.000 usuários atendidos e inúmeras parcerias estabelecidas com escritórios de contabilidade, nossa empresa está
+						empenhada em oferecer um serviço cada vez mais aprimorado. Nosso segredo reside no compromisso com a excelência, priorizando o bem-estar de nossos clientes e buscando sempre orientá-los para as melhores
+						decisões. Isso resulta em confiança e satisfação em cada interação com nossos serviços.
 					</p>
 					{!isMobile && (
 						<>
 							<br />
 							<p>
 								{' '}
-								Contamos com uma equipe altamente qualificada e própria, capacitada para atender às diversas demandas do mercado
-								com agilidade e comprometimento. A fidelidade de nossos clientes é a maior prova da qualidade dos serviços que
-								oferecemos. Desenvolvemos projetos específicos para empresas de todos os tamanhos, desde micro empreendimentos até
-								médias empresas, adaptando-nos às necessidades individuais de cada cliente.
+								Contamos com uma equipe altamente qualificada e própria, capacitada para atender às diversas demandas do mercado com agilidade e comprometimento. A fidelidade de nossos clientes é a maior prova da
+								qualidade dos serviços que oferecemos. Desenvolvemos projetos específicos para empresas de todos os tamanhos, desde micro empreendimentos até médias empresas, adaptando-nos às necessidades individuais de
+								cada cliente.
 							</p>
 						</>
 					)}
@@ -75,20 +76,13 @@ export default function AboutUs() {
                 lg:row-span-5
                 '>
 						<div className=' absolute w-[20%] max-w-[18rem] h-[60%]  max-h-[23.875rem] rounded-xl bg-sc'></div>
-						<Image
-							className='relative right-[10%] w-[23rem]'
-							alt='Homem apertando a mão de outro Homem'
-							src={SobreNos}></Image>
+						<Image className='relative right-[10%] w-[23rem]' alt='Homem apertando a mão de outro Homem' src={SobreNos}></Image>
 					</div>
 				)}
 				<div className=' col-span-10 col-start-2 row-start-11	lg:col-span-3 lg:col-start-3 lg:row-start-5  lg:mt-10'>
-					<ButtonExpert
-						color={'orange'}
-						label='Fale com um especialista'
-					/>
+					<ButtonExpert color={'orange'} label='Fale com um especialista' />
 				</div>
 			</section>
-
 		</>
 	);
 }

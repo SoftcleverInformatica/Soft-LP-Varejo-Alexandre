@@ -1,0 +1,8 @@
+.contentlayer
+.next
+.vscode
+build
+out
+dist
+github
+node_modules

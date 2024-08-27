@@ -1,105 +1,90 @@
 import type { Config } from 'tailwindcss';
 
 const config = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
-  prefix: "",
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        'sm': '640px', // celular na vertical
-        'md': '768px', // tablet na vertical
-        'lg': '1024px', // tablet na horizontal
-        'xl': '1280px', // desktop
-        '2xl': '1536px' // tela grande
-      },
-    },
-    fontFamily:{
-      sc:[
-        '"Roboto", Arial',
-      ]
-    },
-    extend: {
-      colors: {
-        'sc': '#053553',
-        'scHover':'#396680',
-        'sc2':'#003658',
-        'pv1': '#24ADB5',
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "pulse": {
-          '0%' : { opacity: '1' },
-          '50%' : { opacity: '.75' },
-          '100%' : { opacity: '1' },
-        }
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse": "pulse 2s cubic-bezier(0, 0, .58, 1) infinite",
-      },
-    },
-    borderRadius:{
-      'scrollbar':'0.5rem',
-    }
-  },
-  plugins: [
-    require("tailwindcss-animate"),
-    require('tailwind-scrollbar')({ nocompatible: true }),
-  ],
-} satisfies Config
+	darkMode: ['class'],
+	content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
+	prefix: '',
+	theme: {
+		extend: {
+			fontFamily: {
+				sc: ['"Roboto", Arial'],
+				primary: ['Montserrat', 'Roboto'],
+				secondary: ['Ubuntu'],
+			},
+			colors: {
+				sc: '#053553',
+				scHover: '#396680',
+				sc2: '#00366B',
+				pv1: '#24ADB5',
+				border: 'hsl(var(--border), <alpha-value>)',
+				input: 'hsl(var(--input), <alpha-value>)',
+				ring: 'hsl(var(--ring), <alpha-value>)',
+				background: 'hsl(var(--background), <alpha-value>)',
+				foreground: 'hsl(var(--foreground), <alpha-value>)',
+				primary: {
+					DEFAULT: 'hsl(var(--primary), <alpha-value>)',
+					foreground: 'hsl(var(--primary-foreground), <alpha-value>)',
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary), <alpha-value>)',
+					foreground: 'hsl(var(--secondary-foreground), <alpha-value>)',
+				},
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive), <alpha-value>)',
+					foreground: 'hsl(var(--destructive-foreground), <alpha-value>)',
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--muted), <alpha-value>)',
+					foreground: 'hsl(var(--muted-foreground), <alpha-value>)',
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent), <alpha-value>)',
+					foreground: 'hsl(var(--accent-foreground), <alpha-value>)',
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover), <alpha-value>)',
+					foreground: 'hsl(var(--popover-foreground), <alpha-value>)',
+				},
+				card: {
+					DEFAULT: 'hsl(var(--card), <alpha-value>)',
+					foreground: 'hsl(var(--card-foreground), <alpha-value>)',
+				},
+			},
+			keyframes: {
+				'accordion-down': {
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
+				},
+				'accordion-up': {
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				'fade-in-left-out-right': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' },
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
+				},
+			},
+			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				range: 'fade-in-left-out-right 6s linear infinite ',
+				fadeIn: 'fade-in 0.5s ease-in-out 0.25s 1 forwards',
+			},
+			backgroundImage: {
+				'base-lp': "url('/public/assets/base.png')",
+				'hero-monitor': "url('/public/assets/header.png')",
+				'hero-laptop-sat-web': 'url("/public/assets/mockup-laptop-sat-web.png")',
+			},
+			borderRadius: {
+				scrollbar: '0.5rem',
+			},
+		},
+	},
+	plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar')({ preferredStrategy: 'pseudoelements', nocompatible: true })],
+} satisfies Config;
 
 export default config;
