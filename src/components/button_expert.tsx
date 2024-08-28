@@ -12,7 +12,7 @@ export default function ButtonExpert({ className, animation, color = 'white', la
 	return (
 		<a
 			className={`
-				flex items-center justify-center gap-2 py-2 px-12 rounded-md  hover:opacity-90
+				flex items-center justify-center gap-2 py-2 px-2 md:px-12 rounded-md  hover:opacity-90
 				${color === 'white' ? 'bg-white  text-primary hover:bg-slate-500 ' : ''}
 				${color === 'orange' ? 'bg-orange-700 hover:bg-orange-600' : ''}
 				${color === 'blue' ? 'bg-primary' : ''} 
@@ -23,10 +23,10 @@ export default function ButtonExpert({ className, animation, color = 'white', la
 			target='_blank'>
 			<span
 				className={`
-					text-xs md:text-sm  
+					text-xs md:text-sm  text-ellipsis overflow-hidden 
 					${color == 'white' && 'font-semibold'} 
 					${color == 'white' ? 'text-primary' : 'text-white'}
-				`}>
+					`}>
 				{label}
 			</span>
 			<Image alt='WhatsappIcon' src={color == 'white' ? WhatsappIcon : WhatsappIconWhite} />

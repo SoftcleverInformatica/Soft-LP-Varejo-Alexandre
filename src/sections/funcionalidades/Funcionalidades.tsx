@@ -52,13 +52,13 @@ export default function Funcionalidades() {
 
 	return (
 		<section className='w-full flex flex-col items-center ' id='funcionalidades'>
-			<div className={`	w-full flex flex-col gap-6 pt-10 px-4 md:px-10 md:pt-20 lg:px-24 lg:pt-28 lg:gap-20 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem]`}>
+			<div className='	w-full flex flex-col gap-6 pt-10 px-4 md:px-10 md:pt-20 lg:px-24 lg:pt-28 lg:gap-20 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem]'>
 				<h2 className='text-3xl lg:text-5xl text-center font-extrabold leading-tight tracking-wide font-main'>Suas necessidades em um só lugar</h2>
 				<div className='flex flex-col lg:flex-row justify-between gap-10 border-2 rounded-[40px] '>
 					<div className='w-1/2 '>
 						<Accordion className='flex flex-col gap-4 p-6 bg-white h-full w-full rounded-l-[40px]' type='single' collapsible defaultValue='item-0'>
 							{recursos.map((recurso, i) => (
-								<AccordionItem key={i} value={`item-${i}`} className='border-0'>
+								<AccordionItem key={i} value={`item-${i}' className='border-0`}>
 									<AccordionTrigger className='text-base font-bold border-2 hover:no-underline rounded-xl p-1 px-3 ' onClick={() => setSelecionado({ modulo: recurso.modulo, item: 0 })}>
 										<span className={`text-base font-bold ${recurso.modulo === selecionado.modulo ? 'text-primary' : ''}`}>{recurso.modulo}</span>
 									</AccordionTrigger>

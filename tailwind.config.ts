@@ -89,6 +89,7 @@ const config = {
 			backgroundImage: {
 				// pasta raiz => public/
 				banner: 'url("/assets/header.png")',
+				bannerMobile: 'url("/assets/HeaderBG.png")',
 			},
 			borderRadius: {
 				scrollbar: '0.5rem',

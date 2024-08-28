@@ -299,7 +299,7 @@ export default function Feedback() {
 				<CarouselContent className='flex w-full'>
 					{feedbacks.map((_, index) => (
 						<CarouselItem key={index} className='pl-2 md:basis-1/3 lg:basis-1/5 '>
-							<div className='flex flex-col justify-between max-w-[80%] md:max-w-60 lg:max-w-60 min-h-80 px-5 py-10 ml-12 bg-white rounded-lg ' key={index}>
+							<div className='flex flex-col justify-between  min-h-80 px-5 py-10 ml-12 bg-white rounded-lg ' key={index}>
 								<div className='flex flex-col '>
 									<span className='text-4xl font-bold text-primary '>&#34;</span>
 									<ReadMore className='text-[0.9rem] leading-6 text-primary text-justify' text={_.message} amountOfWords={16} />

@@ -87,8 +87,6 @@ export default function Products() {
 	];
 
 	const item = (item: number) => {
-		// let exibirDetalhes = cards.filter((item: any) => item.label === modulo);
-
 		return (
 			<div key={Math.random()} className=' p-6 opacity-0 animate-fadeIn  flex flex-col gap-10'>
 				<h3>{cards[item].label}</h3>
@@ -100,7 +98,7 @@ export default function Products() {
 
 	return (
 		<section className='flex w-full flex-col items-center justify-center overflow-y-hidden py-5'>
-			<div className={`	w-full flex flex-col gap-6 pt-10 px-4 md:px-10 md:pt-20 lg:px-24 lg:pt-28 lg:gap-20 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem]`}>
+			<div className='	w-full flex flex-col gap-6 pt-10 px-4 md:px-10 md:pt-20 lg:px-24 lg:pt-28 lg:gap-20 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem]'>
 				<h2 className='p-5 text-center text-2xl font-extrabold text-primary'>Conheça as soluções da Soft Clever para o seu comércio varejista!</h2>
 
 				<div className='flex h-full flex-col items-center gap-5 rounded-lg bg-primary p-5 opacity-90 md:h-20 md:flex-row md:w-[30rem]  '>
@@ -110,21 +108,22 @@ export default function Products() {
 					<Image src={mercadoLivre} alt='logo Mercado Livre' width={60} />
 				</div>
 
-				<div className='flex flex-col lg:flex-row justify-between gap-10 border-2 rounded-[40px] '>
-					<div className='w-1/2 '>
-						<div className='p-6'>
+				<div className='flex flex-col lg:flex-row justify-between lg:gap-10 border-2 rounded-[40px] '>
+					<div className='w-full lg:w-1/2  '>
+						<div className='p-6 flex gap-4 lg:gap-0 w-full overflow-x-auto lg:flex-col'>
 							{cards.map((_, i) => (
-								<a key={i} onClick={() => setSelecionado({ item: i })} className={`flex justify-between items-center p-2 text-base font-semibold border-b  ${selecionado.item === i ? 'text-primary' : ''} `}>
-									<span>{_.label}</span> <ArrowRight></ArrowRight>
-								</a>
+								<div
+									key={i}
+									onClick={() => setSelecionado({ item: i })}
+									className={`flex items-end lg:items-center justify-start rounded-3xl shrink-0 h-40 w-48 lg:justify-between lg:w-auto lg:h-auto lg:rounded-none  lg:border-b lg:border-0 p-6 lg:p-2 text-base font-semibold border-2 border-gray-400  ${selecionado.item === i ? 'text-primary' : ''} `}>
+									<span>{_.label}</span> <ArrowRight className='hidden lg:block'></ArrowRight>
+								</div>
 							))}
 						</div>
 					</div>
-					<div className='w-1/2 bg-secondary rounded-r-[40px] text-white '>{item(selecionado.item)}</div>
+					<div className='w-full lg:w-1/2 bg-secondary rounded-b-[40px] lg:rounded-r-[40px] text-white '>{item(selecionado.item)}</div>
 				</div>
-				<div className='px-6'>
-					<ButtonExpert color={'orange'} label='Quero decolar o meu negócio' animation='animate-pulse' />
-				</div>
+				<ButtonExpert color={'orange'} label='Quero decolar o meu negócio' animation='animate-pulse' />
 			</div>
 		</section>
 	);
