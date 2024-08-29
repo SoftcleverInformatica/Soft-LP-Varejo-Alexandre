@@ -68,45 +68,29 @@ export default function Questions() {
 		},
 	];
 	return (
-		<>
-			<section className='grid grid-cols-12 grid-rows-10 lg:grid-rows-3 w-full bg-primary gap-6 lg:py-[3.3rem] md:pb-6 shadow-xl'>
-				<div
-					className='col-span-10 col-start-2 row-span-1 row-start-2
-            lg:col-span-3 lg:col-start-2 lg:row-span-2 lg:row-start-2 
-            flex flex-col gap-4
-            '>
-					<h2
-						className=' text-white font-bold text-3xl
-                    lg:text-5xl lg:leading-[3.5rem]'>
-						Perguntas Frequentes
-					</h2>
-					{!isMobile && <ButtonExpert color={'orange'} label='Fale com um especialista' />}
-				</div>
-
-				<div
-					className='col-span-10 col-start-2  row-span-7 row-start-3
-                md:mb-[2.5rem]
-            lg:col-span-6 lg:col-start-6 lg:row-start-1 lg:row-st
-            '>
-					<Accordion className='gap-3 bg-white p-4  rounded-md' type='single' collapsible>
-						{QuestionsResponse.map((item, index) => {
-							return (
-								<AccordionItem className='bg-primary mb-3 rounded-md' value={index.toString()} key={index}>
-									<AccordionTrigger className='text-white text-lg font-semibold gap-2 px-3 text-left'>{item.Question}</AccordionTrigger>
-									<AccordionContent className='text-white text-base font-normal px-4 text-justify'>{item.Response}</AccordionContent>
-								</AccordionItem>
-							);
-						})}
-					</Accordion>
-				</div>
-				{isMobile && (
-					<div
-						className='col-span-10 col-start-2 row-start-10 mt-6 md:mt-3 lg:mt-0
-					lg:col-span-6 lg:col-start-6 lg:row-start-1 lg:row-st'>
-						<ButtonExpert color={'orange'} label='Fale com um especialista' />
+		<section className='flex w-full flex-col items-center bg-primary py-10 xl:py-20'>
+			<div className='flex w-full flex-col gap-16 px-4 md:px-10 lg:max-w-5xl lg:gap-16 lg:px-24 xl:max-w-6xl 2xl:max-w-[90rem]'>
+				<div className='flex w-full flex-col items-center justify-between gap-4 sm:flex-row'>
+					<div className='w-full lg:w-4/12'>
+						<h2 className='mb-4 text-3xl font-bold text-white lg:text-5xl lg:leading-[3.5rem]'>Perguntas Frequentes</h2>
+						<ButtonExpert color={'orange'} label='Fale com um especialista' className='hidden sm:flex' />
 					</div>
-				)}
-			</section>
-		</>
+
+					<div className='w-full lg:w-7/12'>
+						<Accordion className='gap-3 rounded-3xl bg-white p-4' type='single' collapsible>
+							{QuestionsResponse.map((item, index) => {
+								return (
+									<AccordionItem className='mb-3 rounded-2xl bg-primary' value={index.toString()} key={index}>
+										<AccordionTrigger className='gap-2 px-3 text-left text-lg font-semibold text-white'>{item.Question}</AccordionTrigger>
+										<AccordionContent className='px-4 text-justify text-base font-normal text-white'>{item.Response}</AccordionContent>
+									</AccordionItem>
+								);
+							})}
+						</Accordion>
+					</div>
+				</div>
+				<ButtonExpert color={'orange'} label='Fale com um especialista' className='sm:hidden' />
+			</div>
+		</section>
 	);
 }

@@ -150,24 +150,24 @@ export default function Price() {
 	];
 
 	return (
-		<section className='w-full flex flex-col items-center py-10 xl:py-20 '>
-			<div className='w-full flex flex-col gap-16  px-4 md:px-10  lg:px-24  lg:gap-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem]'>
-				<h2 className='text-primary font-extrabold text-2xl'>Escolha o plano ideal para o seu negócio</h2>
-				<div className='flex flex-col gap-2 justify-center md:grid md:grid-rows-2 md:grid-cols-2 xl:flex xl:flex-row '>
+		<section className='flex w-full flex-col items-center py-10 xl:py-20'>
+			<div className='flex w-full flex-col gap-16 px-4 md:px-10 lg:max-w-5xl lg:gap-16 lg:px-24 xl:max-w-6xl 2xl:max-w-[90rem]'>
+				<h2 className='text-justify text-lg font-semibold lg:text-left lg:text-3xl'>Escolha o plano ideal para o seu negócio</h2>
+				<div className='flex flex-col justify-center gap-2 md:grid md:grid-cols-2 md:grid-rows-2 xl:flex xl:flex-row'>
 					{planos.map((_, i) => {
 						return (
-							<div key={i} className={`flex flex-col gap-1 p-2 pt-2 rounded-md  ${_.recommended ? 'bg-primary' : ''} `}>
-								<span className={`text-white font-bold h-6 pl-3 `}>{_.recommended ? 'Recomendado' : ''}</span>
+							<div key={i} className={`flex flex-col gap-1 rounded-3xl p-2 pt-2 ${_.recommended ? 'bg-primary' : ''} `}>
+								<span className={`h-6 pl-3 font-bold text-white`}>{_.recommended ? 'Recomendado' : ''}</span>
 								<div
-									className={`flex flex-col flex-1 gap-4 justify-between px-4 py-8 bg-white rounded-md border transition ease-in-out delay-150 hover:drop-shadow-[0px_0px_10px_rgba(36,173,181,.75)] border-primary /50 ${_.recommended ? 'drop-shadow-[0px_0px_6px_rgba(36,173,181,1)]' : ''}  lg:px-8 lg:py-12 lg:gap-5 xl:w-72`}>
+									className={`/50 flex flex-1 flex-col justify-between gap-4 rounded-3xl border border-primary bg-white px-4 py-8 transition delay-150 ease-in-out hover:drop-shadow-[0px_0px_10px_rgba(36,173,181,.75)] ${_.recommended ? 'drop-shadow-[0px_0px_6px_rgba(36,173,181,1)]' : ''} lg:gap-5 lg:px-8 lg:py-12 xl:w-72`}>
 									<div>
-										<h4 className='text-primary font-semibold text-2xl'>{_.plan}</h4>
-										<p className='text-primary /70 text-xs '>{_.description.label}</p>
+										<h4 className='text-2xl font-semibold'>{_.plan}</h4>
+										<p className='/70 text-xs'>{_.description.label}</p>
 									</div>
 									<ul className='flex flex-col gap-2'>
 										{_.fatures.map((_, i) => {
 											return (
-												<li key={i} className='text-primary /90 text-xs leading-5 flex items-center gap-2'>
+												<li key={i} className='/90 flex items-center gap-2 text-xs leading-5'>
 													{_.icon}
 													<span>{_.item}</span>
 												</li>
@@ -175,17 +175,17 @@ export default function Price() {
 										})}
 									</ul>
 									<div className='flex flex-col gap-2 sm:gap-4'>
-										<p className='text-primary /70 text-xs '>{_.description2.label}</p>
-										<h3 className={`text-primary font-bold text-3xl ${_.price} ? '' : 'hidden'`}>
+										<p className='/70 text-xs'>{_.description2.label}</p>
+										<h3 className={`text-3xl font-bold ${_.price} ? '' : 'hidden'`}>
 											{_.price
 												? new Intl.NumberFormat('pt-BR', {
 														style: 'currency',
 														currency: 'BRL',
 													}).format(_.price)
 												: ''}
-											<span className='text-primary /70 text-sm'> Mensais</span>
+											<span className='/70 text-sm'> Mensais</span>
 										</h3>
-										<p className='text-primary /70 text-xs '>{_.plan === 'Sírius SAT Prata - Cupom Fiscal' ? '* Pode ser integrado as nossas ferramentas, tais como: Pré Venda, Comanda, Delivery e outras.' : ''}</p>
+										<p className='/70 text-xs'>{_.plan === 'Sírius SAT Prata - Cupom Fiscal' ? '* Pode ser integrado as nossas ferramentas, tais como: Pré Venda, Comanda, Delivery e outras.' : ''}</p>
 										<ButtonExpert color={`orange`} label='Fale com um especialista' />
 									</div>
 								</div>

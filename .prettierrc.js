@@ -1,5 +1,4 @@
 module.exports = {
-	plugins: ['prettier-plugin-tailwindcss', '@ianvs/prettier-plugin-sort-imports'],
 	bracketSpacing: true,
 	endOfLine: 'crlf',
 	semi: true,
@@ -14,7 +13,6 @@ module.exports = {
 	experimentalTernaries: false,
 	bracketSameLine: true,
 	arrowParens: 'always',
-	// tailwindConfig: './tailwind.config.ts',
 	tailwindFunctions: ['clsx', 'tw'],
 	tailwindAttributes: ['className'],
 	importOrder: [
@@ -37,4 +35,5 @@ module.exports = {
 	],
 	importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
 	importOrderTypeScriptVersion: '5.0.0',
+	plugins: ['prettier-plugin-tailwindcss', '@ianvs/prettier-plugin-sort-imports'],
 };

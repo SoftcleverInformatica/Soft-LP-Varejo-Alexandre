@@ -1,85 +1,40 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import SobreNos from '@/../../public/assets/about-us.png';
 import Image from 'next/image';
 import ButtonExpert from '@/components/button_expert';
-import SobreNos from '../../../public/assets/about-us.png';
 
 export default function AboutUs() {
-	const [isMobile, setIsMobile] = useState(true);
-	useEffect(() => {
-		if (window.innerWidth >= 320 && window.innerWidth <= 1023) {
-			setIsMobile(true);
-		} else {
-			setIsMobile(false);
-		}
-
-		function updateText() {
-			if (window.innerWidth >= 320 && window.innerWidth <= 1023) {
-				setIsMobile(true);
-			} else {
-				setIsMobile(false);
-			}
-		}
-
-		// Adiciona um ouvinte de evento de redimensionamento da janela
-		window.addEventListener('resize', updateText);
-
-		// Remove o ouvinte de evento ao desmontar o componente
-		return () => {
-			window.removeEventListener('resize', updateText);
-		};
-	}, []);
-
 	return (
-		<>
-			<section
-				className='grid grid-cols-12 grid-rows-12 
-        mt-16
-        md:grid-rows-7
-        lg:grid-rows-5 lg:mt-0'>
-				<h1
-					className='col-span-5 col-start-2  font-bold text-2xl  text-primary row-span-1
-                lg:col-start-3 lg:row-start-1 lg:flex lg:flex-col lg:justify-center
-                '>
-					Sobre nós
-				</h1>
+		<section className='flex w-full flex-col items-center py-10 xl:py-20'>
+			<div className='flex w-full flex-col gap-16 px-4 md:px-10 lg:max-w-5xl lg:gap-16 lg:px-24 xl:max-w-6xl 2xl:max-w-[90rem]'>
+				<h1 className='text-justify text-lg font-semibold lg:text-left lg:text-3xl'>Sobre nós</h1>
 
-				<div
-					className='col-span-10 row-span-8 col-start-2 row-start-2 text-justify text-primary font-medium text-lg
-            md:row-span-3
-            lg:col-span-5 lg:col-start-3 lg:row-start-2 lg:text-left lg:text-base'>
-					<p>
-						{' '}
-						A Soft Clever tem uma trajetória sólida no desenvolvimento de sistemas desde 1994. Com mais de 12.000 usuários atendidos e inúmeras parcerias estabelecidas com escritórios de contabilidade, nossa empresa está
-						empenhada em oferecer um serviço cada vez mais aprimorado. Nosso segredo reside no compromisso com a excelência, priorizando o bem-estar de nossos clientes e buscando sempre orientá-los para as melhores
-						decisões. Isso resulta em confiança e satisfação em cada interação com nossos serviços.
-					</p>
-					{!isMobile && (
-						<>
-							<br />
+				<div className='w-full text-justify text-lg font-medium lg:text-left lg:text-base'>
+					<div className='flex gap-8'>
+						<div className='flex w-full flex-col gap-8 lg:w-2/3'>
 							<p>
-								{' '}
-								Contamos com uma equipe altamente qualificada e própria, capacitada para atender às diversas demandas do mercado com agilidade e comprometimento. A fidelidade de nossos clientes é a maior prova da
-								qualidade dos serviços que oferecemos. Desenvolvemos projetos específicos para empresas de todos os tamanhos, desde micro empreendimentos até médias empresas, adaptando-nos às necessidades individuais de
-								cada cliente.
+								A Soft Clever tem uma trajetória sólida no desenvolvimento de sistemas desde 1994. Com mais de 12.000 usuários atendidos e inúmeras parcerias estabelecidas com escritórios de contabilidade, nossa empresa
+								está empenhada em oferecer um serviço cada vez mais aprimorado. Nosso segredo reside no compromisso com a excelência, priorizando o bem-estar de nossos clientes e buscando sempre orientá-los para as
+								melhores decisões. Isso resulta em confiança e satisfação em cada interação com nossos serviços.
 							</p>
-						</>
-					)}
-				</div>
-				{!isMobile && (
-					<div
-						className=' col-span-4 col-start-8 row-start-1 row-span-8 flex flex-col justify-center items-center mr-4 
-                lg:row-span-5
-                '>
-						<div className=' absolute w-[20%] max-w-[18rem] h-[60%]  max-h-[23.875rem] rounded-xl bg-primary'></div>
-						<Image className='relative right-[10%] w-[23rem]' alt='Homem apertando a mão de outro Homem' src={SobreNos}></Image>
+
+							<div className='hidden sm:block'>
+								<p>
+									Contamos com uma equipe altamente qualificada e própria, capacitada para atender às diversas demandas do mercado com agilidade e comprometimento. A fidelidade de nossos clientes é a maior prova da
+									qualidade dos serviços que oferecemos. Desenvolvemos projetos específicos para empresas de todos os tamanhos, desde micro empreendimentos até médias empresas, adaptando-nos às necessidades individuais
+									de cada cliente.
+								</p>
+							</div>
+							<ButtonExpert color={'orange'} label='Fale com um especialista' />
+						</div>
+						<div className='relative hidden flex-col items-center justify-center lg:flex'>
+							<div className='absolute right-0 -z-10 h-full max-h-80 w-full max-w-64 rounded-3xl bg-primary'></div>
+							<Image className='right-0 h-auto w-96' alt='Homem apertando a mão de outro Homem' src={SobreNos}></Image>
+						</div>
 					</div>
-				)}
-				<div className=' col-span-10 col-start-2 row-start-11	lg:col-span-3 lg:col-start-3 lg:row-start-5  lg:mt-10'>
-					<ButtonExpert color={'orange'} label='Fale com um especialista' />
 				</div>
-			</section>
-		</>
+			</div>
+		</section>
 	);
 }

@@ -1,3 +1,4 @@
+import { url } from 'inspector';
 import type { Config } from 'tailwindcss';
 
 const config = {
@@ -90,7 +91,17 @@ const config = {
 				// pasta raiz => public/
 				banner: 'url("/assets/header.png")',
 				bannerMobile: 'url("/assets/HeaderBG.png")',
+				varejo: 'url("/assets/FrameVarejo.png")',
+				atacado: 'url("/assets/FrameAtacado.png")',
+				industria: 'url("/assets/FrameIndustria.png")',
+				fiscal: 'url("/assets/FrameFiscal.png")',
+				section9: 'url("/assets/Section9.png")',
+				feedbackImageBg: 'url("/assets/feedback.png")',
+				star: 'url("/assets/star.svg")',
+				starGray: 'url("/assets/starGray.svg")',
+				SobreNos: 'url("/assets/about-us.png")',
 			},
+
 			borderRadius: {
 				scrollbar: '0.5rem',
 			},

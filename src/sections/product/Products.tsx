@@ -88,7 +88,7 @@ export default function Products() {
 
 	const item = (item: number) => {
 		return (
-			<div key={Math.random()} className=' p-6 opacity-0 animate-fadeIn  flex flex-col gap-10'>
+			<div key={Math.random()} className='flex animate-fadeIn flex-col gap-10 p-6 opacity-0'>
 				<h3>{cards[item].label}</h3>
 				<h6>{cards[item].description}</h6>
 				<Image className='h-24 w-full lg:h-72 lg:w-auto' alt={cards[item].label} src={cards[item].image} width={1000} height={1000} />
@@ -97,31 +97,31 @@ export default function Products() {
 	};
 
 	return (
-		<section className='flex w-full flex-col items-center justify-center overflow-y-hidden py-5'>
-			<div className='	w-full flex flex-col gap-6 pt-10 px-4 md:px-10 md:pt-20 lg:px-24 lg:pt-28 lg:gap-20 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[90rem]'>
-				<h2 className='p-5 text-center text-2xl font-extrabold text-primary'>Conheça as soluções da Soft Clever para o seu comércio varejista!</h2>
+		<section className='flex w-full flex-col items-center py-10 xl:py-20'>
+			<div className='flex w-full flex-col gap-16 px-4 md:px-10 lg:max-w-5xl lg:gap-16 lg:px-24 xl:max-w-6xl 2xl:max-w-[90rem]'>
+				<h2 className='text-justify text-lg font-semibold lg:text-left lg:text-3xl'>Conheça as soluções da Soft Clever para o seu comércio varejista!</h2>
 
-				<div className='flex h-full flex-col items-center gap-5 rounded-lg bg-primary p-5 opacity-90 md:h-20 md:flex-row md:w-[30rem]  '>
+				<div className='flex h-full flex-col items-center gap-5 self-center rounded-3xl bg-primary p-5 opacity-90 sm:w-auto sm:flex-row md:h-20'>
 					<p className='text-white'>Integrações com:</p>
 					<Image src={iFood} alt='logo ifood' width={60} />
 					<Image src={Tray} alt='logo Tray' width={60} />
 					<Image src={mercadoLivre} alt='logo Mercado Livre' width={60} />
 				</div>
 
-				<div className='flex flex-col lg:flex-row justify-between lg:gap-10 border-2 rounded-[40px] '>
-					<div className='w-full lg:w-1/2  '>
-						<div className='p-6 flex gap-4 lg:gap-0 w-full overflow-x-auto lg:flex-col'>
+				<div className='flex flex-col justify-between rounded-[40px] border-2 lg:flex-row lg:gap-10'>
+					<div className='w-full lg:w-1/2'>
+						<div className='flex w-full gap-4 overflow-x-auto p-6 lg:flex-col lg:gap-0'>
 							{cards.map((_, i) => (
 								<div
 									key={i}
 									onClick={() => setSelecionado({ item: i })}
-									className={`flex items-end lg:items-center justify-start rounded-3xl shrink-0 h-40 w-48 lg:justify-between lg:w-auto lg:h-auto lg:rounded-none  lg:border-b lg:border-0 p-6 lg:p-2 text-base font-semibold border-2 border-gray-400  ${selecionado.item === i ? 'text-primary' : ''} `}>
+									className={`flex h-40 w-48 shrink-0 items-end justify-start rounded-3xl border-2 border-gray-400 p-6 text-base font-semibold lg:h-auto lg:w-auto lg:items-center lg:justify-between lg:rounded-none lg:border-0 lg:border-b lg:p-2 ${selecionado.item === i ? '' : ''} `}>
 									<span>{_.label}</span> <ArrowRight className='hidden lg:block'></ArrowRight>
 								</div>
 							))}
 						</div>
 					</div>
-					<div className='w-full lg:w-1/2 bg-secondary rounded-b-[40px] lg:rounded-r-[40px] text-white '>{item(selecionado.item)}</div>
+					<div className='w-full rounded-ee-3xl rounded-es-3xl bg-secondary text-white lg:w-1/2 lg:rounded-es-none lg:rounded-se-3xl'>{item(selecionado.item)}</div>
 				</div>
 				<ButtonExpert color={'orange'} label='Quero decolar o meu negócio' animation='animate-pulse' />
 			</div>

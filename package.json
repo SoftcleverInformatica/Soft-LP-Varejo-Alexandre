@@ -10,7 +10,7 @@
 		"start": "node ./server.js",
 		"lint": "next lint",
 		"ui": "npx shadcn-ui@latest add",
-		"format": "prettier --write .",
+		"format": "prettier --plugin=@ianvs/prettier-plugin-sort-imports --plugin=prettier-plugin-tailwindcss  --write .",
 		"prepare": "husky"
 	},
 	"dependencies": {

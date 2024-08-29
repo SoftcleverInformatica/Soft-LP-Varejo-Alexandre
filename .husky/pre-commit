@@ -1,2 +1,2 @@
-prettier --write .
+prettier --plugin=@ianvs/prettier-plugin-sort-imports --plugin=prettier-plugin-tailwindcss  --write .
 git add .

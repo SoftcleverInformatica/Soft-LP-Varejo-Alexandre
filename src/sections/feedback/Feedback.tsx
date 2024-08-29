@@ -1,6 +1,6 @@
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import ButtonExpert from '@/components/button_expert';
 import { ReadMore } from '@/components/ReadMore';
 import feedbackImageBg from '../../../public/assets/feedback.png';
@@ -8,7 +8,6 @@ import star from '../../../public/assets/star.svg';
 import starGray from '../../../public/assets/starGray.svg';
 
 export default function Feedback() {
-	const bg = { backgroundImage: `url(${feedbackImageBg.src})` };
 	const bgStarGray = { backgroundImage: `url(${starGray.src})` };
 	const bgStar = { backgroundImage: `url(${star.src})` };
 
@@ -292,52 +291,55 @@ export default function Feedback() {
 	];
 
 	return (
-		<div style={bg} className='flex flex-col gap-10 bg-cover bg-center  items-center w-full px-[2.5rem] py-[1.8rem]'>
-			<h2 className='text-2xl font-bold text-white '>Quem usa nos recomenda</h2>
+		<section className='flex w-full flex-col items-center bg-feedbackImageBg bg-cover bg-no-repeat py-10 xl:py-20'>
+			<div className='flex w-full flex-col gap-16 px-4 md:px-10 lg:max-w-5xl lg:gap-16 lg:px-24 xl:max-w-6xl 2xl:max-w-[90rem]'>
+				<h2 className='text-justify text-lg font-semibold text-white lg:text-left lg:text-3xl'>Quem usa nos recomenda</h2>
+				<Carousel className='w-full' plugins={[Autoplay({ delay: 10000 })]}>
+					<CarouselContent className=' '>
+						{feedbacks.map((_, index) => (
+							<CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5'>
+								<div className='flex h-80 flex-col justify-between rounded-3xl bg-white px-6 py-8'>
+									<div className='flex flex-col'>
+										<span className='text-4xl font-bold'>&#34;</span>
+										<ReadMore className='text-justify text-[0.9rem] leading-6' text={_.message} amountOfWords={16} />
+										<p className='text-justify'></p>
+										<span className='w-full text-right text-4xl font-bold'>&#34;</span>
+									</div>
 
-			<Carousel className='flex  w-full xl:max-w-[1440px]' plugins={[Autoplay({ delay: 4000 })]}>
-				<CarouselContent className='flex w-full'>
-					{feedbacks.map((_, index) => (
-						<CarouselItem key={index} className='pl-2 md:basis-1/3 lg:basis-1/5 '>
-							<div className='flex flex-col justify-between  min-h-80 px-5 py-10 ml-12 bg-white rounded-lg ' key={index}>
-								<div className='flex flex-col '>
-									<span className='text-4xl font-bold text-primary '>&#34;</span>
-									<ReadMore className='text-[0.9rem] leading-6 text-primary text-justify' text={_.message} amountOfWords={16} />
-									<p className='text-justify'></p>
-									<span className='text-4xl text-right w-full font-bold text-primary '>&#34;</span>
-								</div>
-
-								<div className='flex flex-col gap-2'>
-									{/* from */}
-									<div className='flex items-center gap-5'>
-										{/* avatar */}
-										<Image
-											className='max-w-5 max-h-5'
-											src={`/reviews/${_.image}`}
-											key={`review-image-${index}`}
-											width={40}
-											height={40}
-											// src={avatar}
-											alt={`Imagem do perfil do usuário  ${_.name}`}
-										/>
-										{/* info */}
-										<div className='flex flex-col'>
-											<p className='text-[9px] font-semibold text-primary'>{_.name}</p>
-											<div className='flex items-center gap-2'>
-												<p className='text-[10px] text-primary'>{_.score}</p>
-												<div style={bgStarGray} className='w-[2.8rem]  h-[0.6rem]'>
-													<div style={{ backgroundImage: `url(${star.src})`, width: `${_.score * 20}%` }} className='h-full '></div>
+									<div className='flex flex-col gap-2'>
+										{/* from */}
+										<div className='flex items-center gap-5'>
+											{/* avatar */}
+											<Image
+												className='max-h-5 max-w-5'
+												src={`/reviews/${_.image}`}
+												key={`review-image-${index}`}
+												width={40}
+												height={40}
+												// src={avatar}
+												alt={`Imagem do perfil do usuário  ${_.name}`}
+											/>
+											{/* info */}
+											<div className='flex flex-col'>
+												<p className='text-[9px] font-semibold'>{_.name}</p>
+												<div className='flex items-center gap-2'>
+													<p className='text-[10px]'>{_.score}</p>
+													<div className='h-[0.6rem] w-[2.8rem] bg-starGray'>
+														<div style={{ backgroundImage: `url(${star.src})`, width: `${_.score * 20}%` }} className='h-full'></div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</CarouselItem>
-					))}
-				</CarouselContent>
-			</Carousel>
-			<ButtonExpert color={'orange'} label='Fale com um especialista' />
-		</div>
+							</CarouselItem>
+						))}
+					</CarouselContent>
+					{/* <CarouselPrevious className='hidden lg:flex' />
+					<CarouselNext className='hidden lg:flex' /> */}
+				</Carousel>
+				<ButtonExpert color={'orange'} label='Fale com um especialista' />
+			</div>
+		</section>
 	);
 }

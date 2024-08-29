@@ -52,69 +52,67 @@ export default function Client() {
 	];
 
 	return (
-		<>
-			<div className='overflow-x-hidden flex flex-col gap-10 px-[2.5rem] py-[1.8rem] items-center lg:py-[3.625rem]  '>
-				<div className='flex flex-col items-center gap-12 lg:max-w-2xl xl:max-w-4xl w-full '>
-					<h2 className='text-2xl font-bold text-primary	'>São Mais de 30 anos de experiência</h2>
-					<p className='text-primary text-center text-lg'>Nós da Soft Clever temos o intuito de ter sua empresa como membro do nosso grupo e não somente como mais um cliente.</p>
-					<div className='flex flex-wrap justify-center items-center gap-20  '>
-						{/* Users */}
-						<div className='flex flex-col gap-1.5 items-center justify-items-center '>
-							<div className='flex gap-5 items-center justify-items-center gap-'>
-								<Image className='' alt='Ícone de clientes' src={iconUser}></Image>
-								<div className='flex flex-col gap-2 items-start justify-items-center '>
-									<p className='text-primary font-primary text-lg font-extrabold'>USUÁRIOS</p>
-									<p className='text-secondary text-lg font-extrabold '>
-										<CountUp duration={2} separator='' delay={1} start={0} end={12000} /> +
-									</p>
-								</div>
-							</div>
-							<div>
-								<p className='text-primary text-base font-extrabold'>+ de 12000</p>
-								<p className='text-primary text-base font-extrabold'>USUÁRIOS</p>
+		<section className='flex w-full flex-col items-center py-10 xl:py-20'>
+			<div className='flex w-full flex-col gap-16 px-4 md:px-10 lg:max-w-5xl lg:gap-16 lg:px-24 xl:max-w-6xl 2xl:max-w-[90rem]'>
+				<h2 className='text-justify text-lg font-semibold lg:text-left lg:text-3xl'>São Mais de 30 anos de experiência</h2>
+				<p className='text-center text-lg'>Nós da Soft Clever temos o intuito de ter sua empresa como membro do nosso grupo e não somente como mais um cliente.</p>
+				<div className='flex flex-wrap items-center justify-center gap-20'>
+					{/* Users */}
+					<div className='flex flex-col items-center justify-items-center gap-1.5'>
+						<div className='gap- flex items-center justify-items-center gap-5'>
+							<Image className='' alt='Ícone de clientes' src={iconUser}></Image>
+							<div className='flex flex-col items-start justify-items-center gap-2'>
+								<p className='font-primary text-lg font-extrabold'>USUÁRIOS</p>
+								<p className='text-lg font-extrabold text-secondary'>
+									<CountUp duration={2} separator='' delay={1} start={0} end={12000} /> +
+								</p>
 							</div>
 						</div>
-						{/* Clients */}
-						<div className='flex flex-col gap-1.5 items-center justify-items-center '>
-							<div className='flex gap-5 items-center justify-items-center gap-'>
-								<Image className='' alt='Ícone de clientes' src={iconClient}></Image>
-								<div className='flex flex-col gap-2 items-start justify-items-center '>
-									<p className='text-primary font-primary text-lg font-extrabold'>CLIENTES</p>
-									<p className='text-secondary text-lg font-extrabold '>
-										<CountUp duration={2} separator='' delay={1} start={0} end={3700} /> +
-									</p>
-								</div>
-							</div>
-							<div>
-								<p className='text-primary text-base font-extrabold'>+ de 3700</p>
-								<p className='text-primary text-base font-extrabold'>CLIENTES</p>
+						<div>
+							<p className='text-base font-extrabold'>+ de 12000</p>
+							<p className='text-base font-extrabold'>USUÁRIOS</p>
+						</div>
+					</div>
+					{/* Clients */}
+					<div className='flex flex-col items-center justify-items-center gap-1.5'>
+						<div className='gap- flex items-center justify-items-center gap-5'>
+							<Image className='' alt='Ícone de clientes' src={iconClient}></Image>
+							<div className='flex flex-col items-start justify-items-center gap-2'>
+								<p className='font-primary text-lg font-extrabold'>CLIENTES</p>
+								<p className='text-lg font-extrabold text-secondary'>
+									<CountUp duration={2} separator='' delay={1} start={0} end={3700} /> +
+								</p>
 							</div>
 						</div>
-						{/* Team */}
-						<div className='flex flex-col gap-1.5 items-center justify-items-center '>
-							<div className='flex gap-5 items-center justify-items-center '>
-								<Image className='' alt='Ícone de clientes' src={iconTeam}></Image>
-								<div className='flex flex-col gap-2 items-start justify-items-center flex-wrap'>
-									<p className="text-primary font-primary text-lg font-extrabold whitespace-pre-wrap before:content-['NOSSA\A_EQUIPE'] sm:before:content-['NOSSA_EQUIPE'] "></p>
-									<p className='text-secondary text-lg font-extrabold '>
-										<CountUp duration={2} separator='' delay={1} start={0} end={20} /> +
-									</p>
-								</div>
+						<div>
+							<p className='text-base font-extrabold'>+ de 3700</p>
+							<p className='text-base font-extrabold'>CLIENTES</p>
+						</div>
+					</div>
+					{/* Team */}
+					<div className='flex flex-col items-center justify-items-center gap-1.5'>
+						<div className='flex items-center justify-items-center gap-5'>
+							<Image className='' alt='Ícone de clientes' src={iconTeam}></Image>
+							<div className='flex flex-col flex-wrap items-start justify-items-center gap-2'>
+								<p className="whitespace-pre-wrap font-primary text-lg font-extrabold before:content-['NOSSA\\\\A_EQUIPE'] sm:before:content-['NOSSA_EQUIPE']"></p>
+								<p className='text-lg font-extrabold text-secondary'>
+									<CountUp duration={2} separator='' delay={1} start={0} end={20} /> +
+								</p>
 							</div>
-							<div>
-								<p className='text-primary text-base font-extrabold'>+ de 20</p>
-								<p className='text-primary text-base font-extrabold'>FUNCIONÁRIOS</p>
-							</div>
+						</div>
+						<div>
+							<p className='text-base font-extrabold'>+ de 20</p>
+							<p className='text-base font-extrabold'>FUNCIONÁRIOS</p>
 						</div>
 					</div>
 				</div>
 				<div>
-					<Carousel plugins={[Autoplay({ delay: 1500 })]} className=' lg:max-w-xl xl:max-w-2xl w-full '>
+					<Carousel plugins={[Autoplay({ delay: 1500 })]} opts={{ loop: true }}>
 						<CarouselContent>
 							{imgs.map((_, index) => (
-								<CarouselItem className='flex  justify-center md:basis-1/5 lg:basis-1/5 ' key={index}>
-									<div className='flex  '>
-										<Image className='self-center h-16 object-contain' alt={_.alt} src={_.src} />
+								<CarouselItem className='md:basis-1/3 lg:basis-1/5' key={index}>
+									<div className='flex items-center justify-center'>
+										<Image className='h-16 object-scale-down' alt={_.alt} src={_.src} />
 									</div>
 								</CarouselItem>
 							))}
@@ -123,7 +121,6 @@ export default function Client() {
 				</div>
 				<ButtonExpert color={'orange'} label='Fale com um especialista' />
 			</div>
-			<div className='section9 bg-cover bg-no-repeat w-full h-[15vh] lg:h-[25vh] max-h-[15rem] min-h-[8rem]'></div>
-		</>
+		</section>
 	);
 }
